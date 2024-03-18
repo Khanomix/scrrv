@@ -28,7 +28,7 @@ class TrimVideoProcess(BaseProcess):
 
     async def set_media_message(self):
         message = await self.client.get_messages(
-            self.chat_id, self.input_message.reply_to_message.message_id
+            self.chat_id, self.input_message.reply_to_message_id
         )
         await self.input_message.reply_to_message.delete()
         self.media_message = message.reply_to_message
